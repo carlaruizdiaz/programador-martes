@@ -1,3 +1,7 @@
 lechuga
 tomate
 morron
+
+zanahoria 
+carne
+carbon
