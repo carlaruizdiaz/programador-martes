@@ -1,0 +1,26 @@
+/* font-family: 'Lato', sans-serif;
+*/
+
+footer {
+    background-color: darkgrey;
+}
+h1,h2,h5 {
+    font-family: 'Lato', sans-serif;
+    color: black;
+    font-weight: bold;
+
+}
+.hero {
+    background: url(../img/header.jpg) no-repeat;
+    background-size: cover;
+    height: 0.5vh;
+    min-height: 600px;
+    color: white;
+}
+
+.presson {
+    max-width: 500px;
+    max-height: 1000px;
+    
+}
+
