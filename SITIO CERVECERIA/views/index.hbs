@@ -10,37 +10,40 @@
 
     </div>
     <div class="row my-3">
-        <div id="shop" class="col-md-5 offset-md-2">
+        <div id="novedades" class="col-md-5 offset-md-2 scroll_selection">
             <h2>novedades</h2>
             <ul class="lista-novedades">
-                <li><a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><img
-                            src="images/novedades01.jpg">Nuevas recetas 1</a></li>
-                <li><a href="#"><img src="images/novedades01.jpg">Nuevas recetas 2</a></li>
-                <li><a href="#"><img src="images/novedades01.jpg">Nuevas recetas 3</a></li>
-                <li><a href="#"><img src="images/novedades01.jpg">Nuevas recetas 4</a></li>
-                <li><a href="#"><img src="images/novedades01.jpg">Nuevas recetas 5</a></li>
-
+                {{#each novedades}}
+                <li>
+                    <a href="javascript:void(0)" data-toggle="modal" 
+                    data-target="#Modal{{id}}"><img
+                            src="{{imagen}}">{{titulo}}</a>
+                </li>
+                {{/each}}
             </ul>
-
-        </div>
-
+        
     </div>
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    {{#each novedades}}
+    <div class="modal fade" id="Modal{{id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Nuevas Recetas</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <h5 class="modal-title" id="exampleModalLabel">{{titulo}}</h5>
+                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
                 </div>
                 <div class="modal-body">
-                    <h3>hola soy un subtitulo</h3>
-                    <p>hola como te va? aveces esto puede resultar extraño y sin sentido pero vos segui adelante,
-                        vale siempre la pena</p>
+                    <img src="{{imagen}}">
+                    <h3>{{subtitulo}}</h3>
+                    <p>{{cuerpo}}</p>
                 </div>
 
             </div>
         </div>
     </div>
+    {{/each}}
+
     <div id="historia" class="row align-items-center py-4 scroll_section">
         <div class="col-lg-2 col-md-3 offset-lg-2 d-none d-sm-block">
             <img src="images/historia_1.jpg" alt="historia 1" class="img-fluid">
@@ -127,7 +130,8 @@
                 </div>
                 <div class="col-md-6">
                     <label for="apellido" class="form-label">Apellido</label>
-                    <input type="text" class="form-control" id="apellido" placeholder="aqui escriba su apellido" name="apellido">
+                    <input type="text" class="form-control" id="apellido" placeholder="aqui escriba su apellido"
+                        name="apellido">
 
                 </div>
                 <div class="col-md-12">
